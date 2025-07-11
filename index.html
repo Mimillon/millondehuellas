@@ -1,110 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PixelRescate - Cada píxel salva una vida</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fafafa;
-      color: #333;
-    }
-    header {
-      background-color: #ff6f61;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header img {
-      max-width: 120px;
-      border-radius: 10px;
-    }
-    h1 {
-      margin: 1rem 0 0.5rem;
-    }
-    p {
-      margin: 0.5rem 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(100, 6px);
-      grid-template-rows: repeat(100, 6px);
-      gap: 1px;
-      margin: 2rem auto;
-      width: 620px;
-      height: 620px;
-      background-color: #ccc;
-    }
-    .pixel {
-      background-color: white;
-      width: 6px;
-      height: 6px;
-      cursor: pointer;
-    }
-    .pixel:hover {
-      background-color: #ff6f61;
-    }
-    .section {
-      padding: 2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-    .donate-box {
-      background: #fff3f1;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 1rem;
-      border: 1px solid #ff6f61;
-    }
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+  <title>MILLÓN DE HUELLAS</title>
 </head>
-<body>
-  <header>
-    <img src="https://images.unsplash.com/photo-1601758123927-1965c30c71a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjYzMDF8MHwxfGFsbHwxfHx8fHx8fHwxNzEwNzg1OTAw&ixlib=rb-4.0.3&q=80&w=800" alt="Perrito rescatado">
-    <h1>PixelRescate</h1>
-    <p>Cada píxel salva una vida 🐾</p>
-  </header>
-  <div class="section">
-    <h2>¿Cómo funciona?</h2>
-    <p>
-      Esta página contiene un millón de píxeles. Puedes comprar un espacio desde solo 1 dólar por píxel para mostrar tu apoyo, dejar tu imagen o mensaje, y ayudarme a rescatar más animales.
-    </p>
-
-    <div class="donate-box">
-      <h3>💸 Donaciones</h3>
-      <p><strong>Airtm:</strong> vagabundoherrante@gmail.com</p>
-      <p><strong>Binance ID:</strong> 1059303747</p>
-      <p>Envía tu imagen y la cantidad de píxeles deseada por mensaje o correo tras la donación.</p>
-    </div>
+<body style="margin:0;font-family:sans-serif;background:#fffaf5;">
+  <div style="text-align:center;background:#ff6f61;color:white;padding:2rem;">
+    <h1>MILLÓN DE HUELLAS</h1>
+    <p>Gracias a quienes dejaron su huella, Maya tiene una nueva vida 🐾</p>
+    <img src="maya.png" style="max-width:100%;border-radius:12px;" alt="Maya antes y después"/>
   </div>
-
-  <div class="section">
-    <h2>🟧 Muro de Pixeles</h2>
-    <p>Haz clic sobre el espacio que deseas y contáctanos para reservarlo. Pronto automatizaremos esta parte.</p>
-    <div class="grid" id="pixelGrid"></div>
+  <div style="display:flex;justify-content:center;align-items:center;padding:2rem;">
+    <div id="pixel-grid" style="display:grid;grid-template-columns:repeat(100,5px);gap:1px;"></div>
   </div>
-
-  <footer>
-    <p>Creado por PixelRescate - Proyecto solidario para salvar vidas animales 🐶🐱</p>
-  </footer>
-
   <script>
-    const grid = document.getElementById("pixelGrid");
+    const grid = document.getElementById("pixel-grid");
     for (let i = 0; i < 10000; i++) {
       const pixel = document.createElement("div");
-      pixel.classList.add("pixel");
-      pixel.title = `Pixel #${i + 1}`;
-      pixel.onclick = () => alert("Este píxel aún está disponible. Donando puedes personalizarlo.");
+      pixel.style.width = "5px";
+      pixel.style.height = "5px";
+      pixel.style.backgroundColor = "#fff";
+      pixel.style.border = "1px solid #eee";
+      pixel.title = "Pixel #" + (i + 1);
       grid.appendChild(pixel);
     }
   </script>
