@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Donar - Millón de Huellas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8f0;
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      color: #444;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 0.3rem;
+    }
+    button {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      width: 100%;
+      background: #ff6f61;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Formulario de Donación</h2>
+  <form method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLSdfA_FORM_ID/formResponse">
+    <label for="nombre">Nombre completo</label>
+    <input type="text" id="nombre" name="entry.1234567890" required>
+
+    <label for="pais">País</label>
+    <select id="pais" name="entry.2345678901" required>
+      <option value="">Selecciona tu país</option>
+      <option value="Colombia">🇨🇴 Colombia</option>
+      <option value="México">🇲🇽 México</option>
+      <option value="Estados Unidos">🇺🇸 Estados Unidos</option>
+      <option value="España">🇪🇸 España</option>
+      <option value="Argentina">🇦🇷 Argentina</option>
+      <option value="Otro">🌍 Otro</option>
+    </select>
+
+    <label for="cantidad">Cantidad de píxeles donados</label>
+    <input type="number" id="cantidad" name="entry.3456789012" required>
+
+    <label for="mensaje">Mensaje (opcional)</label>
+    <textarea id="mensaje" name="entry.4567890123" rows="4"></textarea>
+
+    <label for="imagen">Enlace a imagen (opcional)</label>
+    <input type="url" id="imagen" name="entry.5678901234" placeholder="https://...">
+
+    <button type="submit">Enviar Donación</button>
+  </form>
+</body>
+</html>
