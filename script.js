@@ -1,18 +1,23 @@
-// Usar JSON simulado local
-const jsonURL = 'data.json';
 
-fetch(jsonURL)
+fetch('data.json')
   .then(response => response.json())
   .then(data => {
     const grid = document.getElementById('pixel-grid');
-    data.forEach(entry => {
+    for (let i = 0; i < 100; i++) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-      pixel.title = `${entry.nombre}: ${entry.mensaje}`;
-      pixel.style.backgroundImage = entry.imagen ? `url(${entry.imagen})` : 'none';
-      pixel.style.backgroundSize = 'cover';
-      pixel.onclick = () => window.open(entry.link, '_blank');
+
+      if (data[i]) {
+        pixel.title = `${data[i].nombre}: ${data[i].mensaje}`;
+        if (data[i].imagen) {
+          pixel.style.backgroundImage = `url(${data[i].imagen})`;
+          pixel.style.backgroundSize = 'cover';
+        }
+        pixel.onclick = () => window.open(data[i].link, '_blank');
+      } else {
+        pixel.onclick = abrirFormulario;
+      }
       grid.appendChild(pixel);
-    });
+    }
   })
-  .catch(error => console.error('Error al cargar los datos:', error));
+  .catch(err => console.error('Error al cargar datos:', err));
