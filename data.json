@@ -1,1 +1,37 @@
-[{"nombre": "Ana", "mensaje": "\u00a1Gracias por el apoyo!", "imagen": "https://i.imgur.com/0y8Ftya.png", "link": "https://ejemplo.com/ana"}, {"nombre": "Carlos", "mensaje": "Dejando mi huella", "imagen": "https://i.imgur.com/w1XHlH0.png", "link": "https://ejemplo.com/carlos"}, {"nombre": "Lina", "mensaje": "\u00a1Vamos por m\u00e1s!", "imagen": "https://i.imgur.com/Wv4wZ7O.png", "link": "https://ejemplo.com/lina"}]
+[
+  {
+    "posicion": 2,
+    "nombre": "Carlos",
+    "mensaje": "¡Apoyando a Mastertrading FX!",
+    "imagen": "https://i.imgur.com/mR3B07x.png",
+    "link": "https://youtube.com/channel/UCXOfm1koZDLA5vXTAwZ55Bw"
+  },
+  {
+    "posicion": 18,
+    "nombre": "Lina",
+    "mensaje": "Gracias por su contenido 🙌",
+    "imagen": "https://i.imgur.com/mR3B07x.png",
+    "link": "https://youtube.com/channel/UCXOfm1koZDLA5vXTAwZ55Bw"
+  },
+  {
+    "posicion": 54,
+    "nombre": "Daniel",
+    "mensaje": "¡Vamos con todo!",
+    "imagen": "https://i.imgur.com/mR3B07x.png",
+    "link": "https://youtube.com/channel/UCXOfm1koZDLA5vXTAwZ55Bw"
+  },
+  {
+    "posicion": 88,
+    "nombre": "Laura",
+    "mensaje": "Yo dejé mi huella 🔥",
+    "imagen": "https://i.imgur.com/mR3B07x.png",
+    "link": "https://youtube.com/channel/UCXOfm1koZDLA5vXTAwZ55Bw"
+  },
+  {
+    "posicion": 100,
+    "nombre": "Tú puedes ser el siguiente",
+    "mensaje": "¡Reserva tu lugar!",
+    "imagen": "https://i.imgur.com/mR3B07x.png",
+    "link": "https://youtube.com/channel/UCXOfm1koZDLA5vXTAwZ55Bw"
+  }
+]

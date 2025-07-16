@@ -1,117 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Millón de Huellas</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #fff8f0;
+      margin: 0;
+      padding: 0;
     }
     header {
       background: #ff6f61;
       color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-    #donar {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-    .donar-btn {
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 10px;
-      background-color: #ffcc00;
-      color: #000;
-      cursor: pointer;
-    }
-    #maya-img {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
       padding: 1rem;
+      text-align: center;
     }
-    #maya-img img {
-      max-height: 150px;
-      border-radius: 10px;
-    }
-    #pixel-wall {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 2rem;
-    }
-    .pixel-block {
+    #pixel-grid {
       display: grid;
-      grid-template-columns: repeat(100, 5px);
-      gap: 1px;
-      margin-bottom: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+      gap: 2px;
+      max-width: 800px;
+      margin: 2rem auto;
     }
     .pixel {
-      width: 5px;
-      height: 5px;
-      background: #e0e0e0;
-      transition: transform 0.2s ease-in-out;
+      width: 20px;
+      height: 20px;
+      background-color: #eee;
+      border-radius: 2px;
+      cursor: pointer;
+      border: 1px solid #ccc;
     }
-    .pixel:hover {
-      transform: scale(1.5);
-      z-index: 10;
-    }
-    footer {
-      background: #f0f0f0;
-      padding: 2rem;
-      text-align: center;
+    .ocupado {
+      border: 2px solid #000;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Millón de Huellas</h1>
-    <p>Gracias a quienes dejaron su huella, Maya tiene una nueva vida 🐾</p>
+    <h1>Millón de Huellas 🐾</h1>
+    <p>Haz clic sobre un píxel disponible para dejar tu huella 👣</p>
   </header>
-
-  <div id="donar">
-    <button class="donar-btn" onclick="alert('Dona por Airtm a: vagabundoherrante@gmail.com')">💸 Donar por Airtm</button>
-    <button class="donar-btn" onclick="alert('Dona por Binance ID: 1059303747')">💱 Donar por Binance</button>
-  </div>
-
-  <div id="maya-img">
-    <img src="maya.png" alt="Maya antes">
-    <img src="maya.png" alt="Maya después">
-  </div>
-
-  <div id="pixel-wall"></div>
-
-  <footer>
-    <h3>🌎 ¿Qué país deja más huellas?</h3>
-    <ul id="ranking">
-      <li>🥇 🇨🇴 Colombia — 3,215 píxeles</li>
-      <li>🥈 🇲🇽 México — 2,084 píxeles</li>
-      <li>🥉 🇺🇸 Estados Unidos — 1,955 píxeles</li>
-    </ul>
-    <p>¡Demuestra que tu país es el más generoso!</p>
-  </footer>
-
-  <script>
-    const pixelWall = document.getElementById("pixel-wall");
-    for (let block = 0; block < 5; block++) {
-      const pixelBlock = document.createElement("div");
-      pixelBlock.className = "pixel-block";
-      for (let i = 0; i < 10000; i++) {
-        const pixel = document.createElement("div");
-        pixel.className = "pixel";
-        pixel.title = "Disponible";
-        pixelBlock.appendChild(pixel);
-      }
-      pixelWall.appendChild(pixelBlock);
-    }
-  </script>
+  <div id="pixel-grid"></div>
+  <script src="script.js"></script>
 </body>
 </html>
