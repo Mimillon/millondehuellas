@@ -4,18 +4,9 @@
   <meta charset="UTF-8">
   <title>Millón de Huellas</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #fff8f0;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background: #ff6f61;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
+    body { font-family: Arial, sans-serif; background: #fff8f0; margin: 0; padding: 0; }
+    header { background: #ff6f61; color: white; padding: 1rem; text-align: center; }
+    section { max-width: 800px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
     #pixel-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
@@ -34,6 +25,13 @@
     .ocupado {
       border: 2px solid #000;
     }
+    #admin-panel {
+      display: none;
+      margin-top: 1rem;
+    }
+    input, textarea { width: 100%; margin-bottom: 0.5rem; padding: 0.5rem; }
+    label { font-weight: bold; }
+    button { padding: 0.5rem 1rem; margin-top: 0.5rem; }
   </style>
 </head>
 <body>
@@ -41,7 +39,44 @@
     <h1>Millón de Huellas 🐾</h1>
     <p>Haz clic sobre un píxel disponible para dejar tu huella 👣</p>
   </header>
+
+  <section>
+    <h2>🎯 ¿Cuál es la causa?</h2>
+    <p>Este proyecto busca recaudar fondos para seguir enseñando y compartiendo conocimiento sobre trading con el algoritmo XZ de Mastertrading FX. Cada píxel comprado representa tu apoyo y deja una huella visible.</p>
+  </section>
+
+  <section>
+    <h2>📌 Instrucciones para donar</h2>
+    <ol>
+      <li>Haz clic en un píxel disponible (gris).</li>
+      <li>Llena el formulario con tu nombre, imagen, mensaje y enlace personalizado.</li>
+      <li>Una vez verificada la donación, tu píxel aparecerá en la galería.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🔐 Área de administración</h2>
+    <input type="password" id="admin-pass" placeholder="Contraseña de administrador" />
+    <button onclick="validarAdmin()">Ingresar</button>
+    <div id="admin-panel">
+      <h3>Modificar píxel manualmente</h3>
+      <label for="pos">Posición del píxel (1-1000):</label>
+      <input id="pos" type="number" min="1" max="1000" />
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" type="text" />
+      <label for="mensaje">Mensaje:</label>
+      <input id="mensaje" type="text" />
+      <label for="imagen">URL de Imagen:</label>
+      <input id="imagen" type="text" />
+      <label for="link">Enlace personal:</label>
+      <input id="link" type="text" />
+      <button onclick="guardarPixel()">Guardar píxel</button>
+      <p><small>Esto actualizará el archivo local <code>data.json</code> en tiempo real (solo local, no escribe en GitHub automáticamente).</small></p>
+    </div>
+  </section>
+
   <div id="pixel-grid"></div>
+
   <script src="script.js"></script>
 </body>
 </html>
