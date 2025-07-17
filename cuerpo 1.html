@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Millón de Huellitas - ¡Ayuda a los Animales!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png"> </head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Un Millón de Huellitas</h1>
+            <p>¡Tu huella hace la diferencia para un amigo peludo!</p>
+            <nav>
+                <ul>
+                    <li><a href="#como-funciona">¿Cómo funciona?</a></li>
+                    <li><a href="#nuestra-causa">Nuestra Causa</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="hero">
+            <h2>Ayúdanos a recaudar fondos para salvar y proteger animales.</h2>
+            <p class="highlight">¡Cada píxel cuenta! Compra tu espacio y deja tu marca solidaria.</p>
+            <div class="stats">
+                <p>Píxeles vendidos: <span id="pixelsSold">0</span> / 1,000,000</p>
+                <progress id="progress" value="0" max="1000000"></progress>
+            </div>
+            <button id="buyPixelsBtn" class="cta-button">¡Compra tus Píxeles Ahora!</button>
+        </section>
+
+        <section id="pixel-grid-section">
+            <h2>Nuestras Huellitas Solidarias</h2>
+            <p>Explora el muro de la solidaridad. Cada cuadrado representa una huella de apoyo.</p>
+            <div id="pixelGrid">
+                </div>
+            <div class="grid-controls">
+                <button id="zoomIn">Ampliar</button>
+                <button id="zoomOut">Reducir</button>
+            </div>
+        </section>
+
+        <section id="como-funciona">
+            <h2>¿Cómo Funciona?</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <h3>1. Elige tu Espacio</h3>
+                    <p>Selecciona el tamaño del bloque de píxeles que deseas adquirir (ej. 10x10, 20x20). Cada píxel tiene un valor de **$1 USD**.</p>
+                </div>
+                <div class="step-card">
+                    <h3>2. Sube tu Imagen</h3>
+                    <p>Personaliza tu espacio con una imagen, logo o mensaje que represente tu apoyo.</p>
+                </div>
+                <div class="step-card">
+                    <h3>3. Añade un Enlace (Opcional)</h3>
+                    <p>Si lo deseas, puedes vincular tu huellita a tu sitio web, redes sociales o un mensaje especial.</p>
+                </div>
+                <div class="step-card">
+                    <h3>4. Realiza tu Pago</h3>
+                    <p>Completa la transacción de forma segura. Tu contribución va directamente a los animales necesitados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="nuestra-causa">
+            <h2>Nuestra Causa: Un Futuro para Cada Huellita</h2>
+            <p>En "Un Millón de Huellitas", estamos comprometidos con la protección y el bienestar animal en Colombia.</p>
+            <div class="cause-details">
+                <p>Tu contribución nos permite:</p>
+                <ul>
+                    <li>Rescatar animales abandonados y maltratados.</li>
+                    <li>Ofrecer atención veterinaria y rehabilitación.</li>
+                    <li>Promover programas de adopción responsable.</li>
+                    <li>Realizar campañas de esterilización y educación.</li>
+                </ul>
+                <p>¡Juntos podemos construir un mundo donde cada animal reciba el amor y el cuidado que merece!</p>
+                <img src="assets/animals_banner.jpg" alt="Animales felices" class="cause-image"> </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <p>¿Tienes preguntas o quieres colaborar? ¡Nos encantaría escucharte!</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Tu Nombre" required>
+                <input type="email" placeholder="Tu Correo Electrónico" required>
+                <textarea placeholder="Tu Mensaje" rows="5" required></textarea>
+                <button type="submit" class="cta-button">Enviar Mensaje</button>
+            </form>
+            <div class="social-links">
+                <p>Síguenos en nuestras redes:</p>
+                <a href="https://facebook.com/unmillondehuellitas" target="_blank">Facebook</a> |
+                <a href="https://instagram.com/unmillondehuellitas" target="_blank">Instagram</a> |
+                <a href="https://twitter.com/unmillondehuellitas" target="_blank">Twitter</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Un Millón de Huellitas. Todos los derechos reservados.</p>
+            <p>Hecho con amor por los animales en Medellín, Colombia.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
