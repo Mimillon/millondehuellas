@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administrador de Píxeles</title>
+  <style>
+    body { font-family: sans-serif; background: #f0f0f0; padding: 20px; }
+    #login, #editor { max-width: 600px; margin: auto; display: none; }
+    .pixel { margin: 10px 0; }
+    .pixel input[type="text"] { width: 100%; margin-top: 5px; }
+    .preview { width: 100px; height: 100px; object-fit: contain; border: 1px solid #ccc; display: block; margin-bottom: 5px; }
+    button { padding: 10px; background: #1e90ff; color: white; border: none; cursor: pointer; }
+    button:hover { background: #0d6efd; }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Acceso administrador</h2>
+  <input type="password" id="password" placeholder="Clave de acceso">
+  <button onclick="checkLogin()">Entrar</button>
+</div>
+
+<div id="editor">
+  <h2>Editor de Píxeles</h2>
+  <div id="pixelContainer"></div>
+  <button onclick="addPixel()">Agregar nuevo pixel</button>
+</div>
+
+<script>
+const ADMIN_PASSWORD = "admin123";
+
+function checkLogin() {
+  const pass = document.getElementById("password").value;
+  if (pass === ADMIN_PASSWORD) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("editor").style.display = "block";
+    loadPixels();
+  } else {
+    alert("Clave incorrecta");
+  }
+}
+
+function loadPixels() {
+  const container = document.getElementById("pixelContainer");
+  container.innerHTML = "";
+  const pixels = JSON.parse(localStorage.getItem("pixels") || "[]");
+  pixels.forEach((pixel, index) => {
+    const div = document.createElement("div");
+    div.className = "pixel";
+    div.innerHTML = `
+      <img class="preview" src="${pixel.image || ''}" alt="Imagen">
+      <input type="text" placeholder="URL de imagen" value="${pixel.image}" onchange="updatePixel(${index}, 'image', this.value)">
+      <input type="text" placeholder="Link al hacer clic" value="${pixel.link}" onchange="updatePixel(${index}, 'link', this.value)">
+    `;
+    container.appendChild(div);
+  });
+}
+
+function updatePixel(index, field, value) {
+  const pixels = JSON.parse(localStorage.getItem("pixels") || "[]");
+  pixels[index][field] = value;
+  localStorage.setItem("pixels", JSON.stringify(pixels));
+  loadPixels(); // recargar para mostrar cambios
+}
+
+function addPixel() {
+  const pixels = JSON.parse(localStorage.getItem("pixels") || "[]");
+  pixels.push({ image: "", link: "" });
+  localStorage.setItem("pixels", JSON.stringify(pixels));
+  loadPixels();
+}
+
+document.getElementById("login").style.display = "block";
+</script>
+
+</body>
+</html>
